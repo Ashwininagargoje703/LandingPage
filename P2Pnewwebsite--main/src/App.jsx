@@ -6,7 +6,7 @@ import PoweredBySection from "./components/PowerdBy";
 import WhyPeer2Play from "./components/WhyPeer";
 import FAQSection from "./components/Faq";
 import Footer from "./components/Footer";
-import Bg from "/assets/Faqbg.png"; // Replace with actual path
+import Bg from "/assets/Faqbg.png"; 
 import { styled, useTheme } from "@mui/material";
 import Hero from "./components/Hero";
 

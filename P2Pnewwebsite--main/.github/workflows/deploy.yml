@@ -1,0 +1,30 @@
+name: React CI/CD
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout files
+        uses: actions/checkout@v3
+
+      - run: npm install
+      - run: npm run build
+
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@master
+        with:
+          HOST: cricverse.redblocks.solutions
+          USERNAME: root
+          passphrase: ${{ secrets.DIGITAL_OCEAN_CRICVERSE_FE_SSH_PASSPHRASE}}
+          PORT: 22
+          KEY: ${{ secrets.DIGITAL_OCEAN_CRICVERSE_FE_SSH_KEY}}
+          source: './dist'
+          target: '/var/www/cricverse/'
+          strip_components: 3 # this is important
+
+

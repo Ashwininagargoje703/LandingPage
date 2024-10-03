@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Noize Sport Free Vertion';
+    src: url('NoizeSportFreeVertion-Regular.eot');
+    src: url('NoizeSportFreeVertion-Regular.eot?#iefix') format('embedded-opentype'),
+        url('NoizeSportFreeVertion-Regular.woff2') format('woff2'),
+        url('NoizeSportFreeVertion-Regular.woff') format('woff'),
+        url('NoizeSportFreeVertion-Regular.ttf') format('truetype'),
+        url('NoizeSportFreeVertion-Regular.svg#NoizeSportFreeVertion-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

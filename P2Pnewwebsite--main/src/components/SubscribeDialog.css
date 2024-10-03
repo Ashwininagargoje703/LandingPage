@@ -1,0 +1,66 @@
+#subscribe-dialog-container {
+  width: 100%;
+  /* padding: 25px; */
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MuiDialog-container {
+  width: min-content;
+}
+.inner-container {
+  padding: 10px;
+}
+.title-content-div {
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+#btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#thanks-btn {
+  width: 385px;
+  height: 44px;
+  border-radius: 5px;
+  background-color: #d800c3;
+  color: #f5f5f5;
+}
+#check-icon {
+  width: 40px;
+  height: 40px;
+  color: #4f4f4f;
+}
+#customized-dialog-title,
+#dialog-text {
+  color: #54595e;
+}
+.dialog-content {
+  text-align: center;
+  color: #54595e;
+}
+#text-container {
+  padding: 0px;
+  background-color: white;
+}
+#customized-dialog-title {
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  #subscribe-dialog-container {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #thanks-btn {
+    width: 300px;
+  }
+}

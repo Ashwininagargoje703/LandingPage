@@ -19,7 +19,7 @@ const EcosystemCard = ({ title, image, description }) => {
         overflow: "hidden",
         backgroundImage: `url(${Bg})`,
         width: "auto",
-        height: "100%",
+        height: "23rem",
         flexWrap:"nowrap",
         mb:2,
         
@@ -58,11 +58,11 @@ const EcosystemCard = ({ title, image, description }) => {
 
 const Ecosystem = () => {
   return (
-    <Box sx={{ padding: "20px", textAlign: "center",  }}>
+    <Box sx={{ padding: "20px", textAlign: "center", placeItems:"center", justifyContent:"center"  }}>
       <H1>
         Our Ecosystem
       </H1>
-      <Grid container spacing={3}>
+      <Grid container spacing={2} justifyContent="center">
         <Grid item xs={12} md={4}>
           <EcosystemCard
             title="Gamers"

@@ -37,10 +37,11 @@ function App() {
     <AppContainer>
       <Navbar />
       <Hero />
-      <CrossChainCompatibility />
       <PoweredBySection />
-      <WhyPeer2Play />
       <Ecosystem />
+
+      <CrossChainCompatibility />
+      <WhyPeer2Play />
       <FAQSection />
       <FAQBackground>
       <Footer />

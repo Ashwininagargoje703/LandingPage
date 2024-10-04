@@ -6,6 +6,8 @@ import {
   List,
   ListItem,
   ListItemText,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import styled from "styled-components";
 import logo from "/assets/logo.png";
@@ -31,8 +33,7 @@ const StyledAppBar = styled(Box)`
 
 const StyledToolbar = styled(Toolbar)`
   justify-content: space-between;
-  padding: 0 5vw;
-  min-height: 64px;
+  padding: 0.5vh 5vw;
 `;
 
 const LinksContainer = styled(Box)`
@@ -69,7 +70,8 @@ const MobileMenuIcon = styled(Box)`
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   useEffect(() => {
     Aos.init({ duration: 1500 });
   }, []);
@@ -172,7 +174,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="logo"
-            style={{ height: "100%", width: "auto" }}
+            style={{ height:isMobile ?"65%": "100%", width: "auto" }}
           />
         </LogoBox>
         {/* Desktop Links */}
@@ -195,7 +197,7 @@ const Navbar = () => {
           color="inherit"
           onClick={toggleDrawer(true)}
         >
-          <AiOutlineMenu />
+          <AiOutlineMenu fontSize={"30px"}/>
         </MobileMenuIcon>
       </StyledToolbar>
 

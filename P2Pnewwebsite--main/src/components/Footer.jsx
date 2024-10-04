@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography, TextField, Button } from "@mui/material";
-import { styled } from "@mui/system";
+import { fontWeight, styled, useMediaQuery, useTheme } from "@mui/system";
 import Bg from "/assets/Footer.png";
 import Bg2 from "/assets/Faqbg.png";
 import Logo from "/assets/footlogo.png";
@@ -29,10 +29,29 @@ const LinkGroup = styled(Box)({
 });
 
 const EmailInput = styled(TextField)({
-  backgroundColor: "#333",
-  borderRadius: "4px",
-  input: {
-    color: "#fff",
+  backgroundColor: "rgba(44, 44, 44, 0.20)",  // Darker background for the input box
+  border: "1px solid rgba(255, 255, 255, 0.10)",
+  outline: "none",  
+  borderRadius: "4px", 
+  fontFamily: '"Rajdhani", sans-serif',
+
+  width: 'calc(100% - 100px)', 
+  '& .MuiInputBase-input': {
+    color: "#fff",  
+    padding: '10px 12px', 
+  fontFamily: '"Rajdhani", sans-serif',
+
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      border: "none",  
+    },
+    '&:hover fieldset': {
+      border: "none",  
+    },
+    '&.Mui-focused fieldset': {
+      border: "none",  
+    },
   },
 });
 
@@ -45,26 +64,28 @@ const SubmitButton = styled(Button)({
 });
 
 const Footer = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <FooterContainer>
-      <Grid container spacing={4} justifyContent="center">
-        <Grid item xs={12} sm={4}>
-          <img src={Logo} alt="LogoImge" style={{ height: "80px" }} />
+      <Grid container spacing={4} justifyContent="center" mt={10}>
+        <Grid item xs={4} sm={4}>
+          <img src={Logo} alt="LogoImge" style={{ height: isMobile? "50px":"70px" }} />
         </Grid>
 
         {/* Learn Section */}
-        <Grid item xs={12} sm={2}>
+        <Grid item xs={4} sm={2}>
           <LinkGroup>
-            <H4>Learn</H4>
+            <H4 style={{fontWeight:400}}>Learn</H4>
             <Body2>Litepaper</Body2>
             <Body2>Docs</Body2>
           </LinkGroup>
         </Grid>
 
         {/* Community Section */}
-        <Grid item xs={12} sm={2}>
+        <Grid item xs={4} sm={2}>
           <LinkGroup>
-            <H4>Community</H4>
+            <H4 style={{fontWeight:400}}>Community</H4>
             <Body2>Twitter</Body2>
             <Body2>Farcaster</Body2>
             <Body2>Discord</Body2>
@@ -73,10 +94,9 @@ const Footer = () => {
 
         {/* Join Whitelist Section */}
         <Grid item xs={12} sm={4}>
-          <H4>Join Whitelist</H4>
-          <Box display="flex" gap="1rem" mt={1} justifyContent="center">
+          <H4 style={{fontWeight:400}}>Join Whitelist</H4>
+          <Box display="flex" gap="1rem" mt={1} justifyContent= {isMobile ? "flex-end" : "center"}>
             <EmailInput
-              variant="outlined"
               placeholder="Email"
               InputProps={{ style: { color: "#fff" } }}
             />

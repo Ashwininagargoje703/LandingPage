@@ -12,7 +12,7 @@ const EcosystemCard = ({ title, image, description }) => {
       sx={{
         backgroundColor: "none",
         color: "#FFFFFF",
-        padding: "20px",
+        padding: "10px",
         textAlign: "center",
         borderRadius: "10px",
         position: "relative",
@@ -20,15 +20,19 @@ const EcosystemCard = ({ title, image, description }) => {
         backgroundImage: `url(${Bg})`,
         width: "auto",
         height: "100%",
+        flexWrap:"nowrap",
+        mb:2,
+        
         backgroundSize: "100% 100%",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         "&:before": {
           content: '""',
-          position: "absolute",
           bottom: 0,
           left: 0,
           clipPath: "polygon(0 0, 100% 100%, 100% 0)",
+          flexWrap: "nowrap",
+          backgroundSize: "cover", // Cover the background for responsiveness
         },
       }}
     >
@@ -44,9 +48,9 @@ const EcosystemCard = ({ title, image, description }) => {
         >
           {title}
         </H3>
-        <Body2>
-          {description}
-        </Body2>
+        <Body2
+          dangerouslySetInnerHTML={{ __html: description }} 
+        />
       </CardContent>
     </Box>
   );
@@ -54,7 +58,7 @@ const EcosystemCard = ({ title, image, description }) => {
 
 const Ecosystem = () => {
   return (
-    <Box sx={{ padding: "40px", textAlign: "center",  }}>
+    <Box sx={{ padding: "20px", textAlign: "center",  }}>
       <H1>
         Our Ecosystem
       </H1>
@@ -63,21 +67,21 @@ const Ecosystem = () => {
           <EcosystemCard
             title="Gamers"
             image={Img1}
-            description="Unlock a new way of playing and earning. Compete in tournaments, earn rewards, and become a part of a decentralized gaming revolution."
+            description="Unlock a new way of playing and <br />earning. Compete in tournaments,<br /> earn rewards, and become a part of a <br /> decentralized gaming revolution."
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <EcosystemCard
             title="Game Devs"
             image={Img2}
-            description="Seamlessly integrate your games with SDK and APIs. Reach a global audience and tap into the power of decentralized, secure gaming systems."
+            description="Seamlessly integrate your games <br /> with SDK and APIs. Reach a global <br /> audience and tap into the power of <br /> decentralized, secure gaming  <br />systems."
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <EcosystemCard
             title="Influencers"
             image={Img3}
-            description=" Create, host, and engage. Host tournaments and challenges, earn rewards, and build a community through Peer2Play’s decentralized ecosystem."
+            description=" Create, host, and engage. Host <br /> tournaments and challenges, earn <br /> rewards, and build a community <br /> through Peer2Play’s decentralized <br /> ecosystem."
           />
         </Grid>
       </Grid>

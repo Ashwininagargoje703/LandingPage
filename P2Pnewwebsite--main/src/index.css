@@ -1,5 +1,6 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Rajdhani", sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
@@ -26,6 +27,8 @@ body {
   display: flex;
   background-color: #080808;
   color: white;
+  font-family: "Rajdhani", sans-serif;
+
 }
 
 h1 {
@@ -93,4 +96,10 @@ button:hover {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 40px; /* Adjust to your preferred mobile font size */
+  }
 }

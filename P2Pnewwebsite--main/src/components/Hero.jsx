@@ -71,8 +71,8 @@ const Hero = () => {
   return (
     <HeroSection>
       <Overlay />
-      <Box sx={{ position: "relative", zIndex: 3 }}>
-        <h1 className="hero-heading">Decentralized Social Gaming Hub</h1>
+      <Box sx={{ position: "relative", zIndex: 3, }}>
+        <h1 className="hero-heading" style={{padding:"1rem" }}>Decentralized Social Gaming Hub</h1>
         <Body>
           Connect, Invite, Challenge & Earn as you play, host, and develop.
         </Body>

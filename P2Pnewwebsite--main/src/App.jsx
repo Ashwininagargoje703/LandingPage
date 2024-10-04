@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Bg from "/assets/Faqbg.png"; 
 import { styled, useTheme } from "@mui/material";
 import Hero from "./components/Hero";
+import CrossChainCompatibility from "./components/CrossChain";
 
 const AppContainer = styled("div")({
   display: "flex",
@@ -36,6 +37,7 @@ function App() {
     <AppContainer>
       <Navbar />
       <Hero />
+      <CrossChainCompatibility />
       <PoweredBySection />
       <WhyPeer2Play />
       <Ecosystem />

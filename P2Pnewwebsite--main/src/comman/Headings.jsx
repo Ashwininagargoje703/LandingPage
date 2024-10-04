@@ -24,12 +24,17 @@ export const Heading = ({ children, ...props }) => {
   return (
     <Typography
       sx={{
-        fontFamily: '"Neue Machina", system-ui',
+        fontFamily: '"Orbitron", sans-serif',
         fontSize,
-        fontWeight: 700,
+        fontWeight: "bold",
         color: "white",
-        lineHeight: "120%",
+        mb:3,
         ...props.sx,
+        background: "linear-gradient(0deg, #F0F0F0 0%, #8A8A8A 113%)",
+        backgroundClip: "text",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        textFillColor: "transparent", // Fallback for non-webkit browsers
       }}
       {...props}
     >
@@ -64,6 +69,7 @@ export const H1 = ({ children, ...props }) => {
         fontSize,
         fontWeight: "bold",
         color: "white",
+        mb:3,
         ...props.sx,
         background: "linear-gradient(0deg, #F0F0F0 0%, #8A8A8A 113%)",
         backgroundClip: "text",
